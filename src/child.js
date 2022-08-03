@@ -18,15 +18,26 @@ class Child extends React.Component {
       snapShot
     );
   }
+  shouldComponentUpdate(prevProps, prevState) {
+    console.log(
+      "ShouldComponentUpdate: (Props)",
+      prevProps,
+      "(State)",
+      prevState
+    );
+    return true;
+  }
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log(
       "getSnapshotBeforeUpdate: (previous props)",
       prevProps,
+      " (Current Props)",
       this.props.data
     );
     console.log(
       "getSnapShotBeforeUpdate (previous state)",
       prevState,
+      "(Current State)",
       this.state.currentValue
     );
     return prevState.currentValue * 10;
