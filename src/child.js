@@ -25,6 +25,7 @@ class Child extends React.Component {
       "(State)",
       prevState
     );
+    //we can compare the state or props witht eh previous props and accordingly retrun true and false to avoid unnecessary renering
     return true;
   }
   getSnapshotBeforeUpdate(prevProps, prevState) {
