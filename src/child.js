@@ -8,6 +8,12 @@ class Child extends React.Component {
       currentValue: 0,
     };
   }
+  static getDerivedStateFromProps(props, state) {
+    console.log("getDerivedStateFromProps: ", state, props);
+    // called before shouldcomponentupdate and render and we cna updated the state form the props before the render method is called.
+    // state is returned after we update the state with the props
+    return 0;
+  }
   componentDidUpdate(props, state, snapShot) {
     console.log(
       "componentDidUpdate: (Props)",
@@ -44,6 +50,7 @@ class Child extends React.Component {
     return prevState.currentValue * 10;
   }
   render() {
+    console.log("render");
     return (
       <div>
         Count props passed from parent: {this.props.data}
