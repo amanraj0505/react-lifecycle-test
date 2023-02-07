@@ -10,7 +10,7 @@ class Child extends React.Component {
   }
   static getDerivedStateFromProps(props, state) {
     console.log("getDerivedStateFromProps: ", state, props);
-    // called before shouldcomponentupdate and render and we cna updated the state form the props before the render method is called.
+    // called before shouldcomponentupdate and render and we can update the state from the props before the render method is called.
     // state is returned after we update the state with the props
     return 0;
   }
@@ -31,7 +31,7 @@ class Child extends React.Component {
       "(State)",
       prevState
     );
-    //we can compare the state or props witht eh previous props and accordingly retrun true and false to avoid unnecessary renering
+    //we can compare the state or props with previous props and accordingly retrun true and false to avoid unnecessary renering
     return true;
   }
   getSnapshotBeforeUpdate(prevProps, prevState) {
