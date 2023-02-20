@@ -4,6 +4,7 @@ import "./App.css";
 class Child extends React.Component {
   constructor(props) {
     super(props);
+    console.log("constructor");
     this.state = {
       currentValue: 0,
     };
@@ -33,6 +34,9 @@ class Child extends React.Component {
     );
     //we can compare the state or props with previous props and accordingly retrun true and false to avoid unnecessary renering
     return true;
+  }
+  componentDidMount() {
+    console.log("componentDidMount");
   }
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log(
